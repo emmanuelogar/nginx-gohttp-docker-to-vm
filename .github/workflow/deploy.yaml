@@ -20,8 +20,8 @@ jobs:
 
     - name: Copy files to Azure VM
       run: |
-        scp -r . ${{ secrets.SSH_USERNAME }}@your-azure-vm:/path/to/destination
+        scp -r . ${{ secrets.SSH_USERNAME }}@20.169.147.101:/demo
 
     - name: Run Docker Compose on Azure VM
       run: |
-        ssh ${{ secrets.SSH_USERNAME }}@your-azure-vm "cd /path/to/destination && docker-compose up -d"
+        ssh ${{ secrets.SSH_USERNAME }}@20.169.147.101 "cd /demo && docker-compose up -d"
